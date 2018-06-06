@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h2>Number Guesser</h2>
+      <hr/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center"><p class="text-instructions">Enter your guess</p></div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button type="button"
+              class="btn btn-primary btn-block fas fa-arrow-up selections"
+              (click)="increase_guess()"></button>
+    </div>
+    <div class="col">
+      <button type="button"
+              class="btn btn-outline-secondary btn-block selections"
+              (click)="check_current_guess()">{{ current_guess }}</button>
+    </div>
+    <div class="col">
+      <button type="button"
+              class="btn btn-info btn-block fas fa-arrow-down selections"
+              (click)="decrease_guess()"></button>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-warning text-center"
+           role="alert"
+           *ngIf="alert_text;else blank_space">
+        {{ alert_text }}
+      </div>
+      <ng-template #blank_space><div class="empty_space"></div></ng-template>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col text-center">
+      <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+          <th scope="col">Guess</th>
+          <th scope="col">Result</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of guess_list">
+            <td>{{ data.guess }}</td>
+            <td>{{ data.result }}</td>
+          </tr>
+          <!-- ref: https://stackoverflow.com/a/45035193 -->
+          <tr *ngIf="!guess_list || guessListEmpty()">
+            <td>-</td>
+            <td>?</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

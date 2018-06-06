@@ -1,0 +1,28 @@
+.btn-circle {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin: auto;
+    font-size: 48px;
+    border-radius: 50%;
+}
+
+.text-play {
+    font-size: 32px;
+}
+
+.text-winner {
+    font-size: 64px;
+}
+
+.text-instructions {
+    font-size: 16px;
+}
+
+.selections {
+    height: 40px;
+}
+
+.empty_space {
+  height: 66px;
+}
